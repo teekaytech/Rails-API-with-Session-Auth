@@ -8,4 +8,9 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     origins 'https://react-frontend-api-check.netlify.app/'
     resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head], credentials: true
   end
+
+  allow do
+    origins '*'
+    resource '/*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head], credentials: true
+  end
 end
